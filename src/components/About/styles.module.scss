@@ -1,0 +1,38 @@
+
+.about {
+  text-align: center;
+      span, h3 {
+        font-size: var(--small-font-size);
+        font-weight: var(--font-medium);
+      }
+
+      span {
+        display: block;
+        color: var(--title-color);
+        margin-bottom: .25rem;
+      }
+
+      h3 {
+        color: var(--text-color);
+        margin-bottom: 2.5rem;
+      }
+
+      h1 {
+        font-size: var(--biggest-font-size);
+      }
+
+      
+  .grid{
+    padding: 4.5rem 0rem 1rem;
+    display: grid;
+    gap: 1.25rem;
+  
+    max-width: 968px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    //Dont general
+    row-gap: 2.5rem;
+  }
+
+}
