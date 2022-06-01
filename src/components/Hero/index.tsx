@@ -5,7 +5,7 @@ import imgHero from './../../assets/image.png'
 
 export function Hero() {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="home">
       <div className={styles.grid}>
         <div className={styles.data}>
           <span>Hello, I´m</span>

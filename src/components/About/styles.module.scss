@@ -1,29 +1,23 @@
 
 .about {
-  text-align: center;
-      span, h3 {
-        font-size: var(--small-font-size);
-        font-weight: var(--font-medium);
-      }
+  padding: 4.5rem 0rem 1rem;
+  span, h2 {
+    text-align: center;
+  }
 
-      span {
-        display: block;
-        color: var(--title-color);
-        margin-bottom: .25rem;
-      }
+  span {
+    display: block;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
+  }
 
-      h3 {
-        color: var(--text-color);
-        margin-bottom: 2.5rem;
-      }
-
-      h1 {
-        font-size: var(--biggest-font-size);
-      }
-
+  h2 {
+    font-size: var(--h2-font-size);
+    color: var(--first-color);
+    margin-bottom: 2rem;
+  }
       
   .grid{
-    padding: 4.5rem 0rem 1rem;
     display: grid;
     gap: 1.25rem;
   
@@ -33,6 +27,45 @@
 
     //Dont general
     row-gap: 2.5rem;
+    img {
+      width: 220px;
+      border-radius: 1.5rem;
+      justify-self: center;
+    }
+
+    .data {
+      text-align: center;
+
+      .info{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5rem;
+        margin-bottom: 2rem;
+
+        .box {
+          background-color: var(--container-color);
+          border-radius: .75rem;
+          padding: .75rem .5rem;
+
+          i {
+            font-size: 1.5rem;
+            color: var(--first-color);
+            margin-bottom: .5rem;
+          }
+          h3 {
+            font-size: var(--small-font-size);
+
+          }
+          span {
+            font-size: var(--tiny-font-size);
+          }
+        }
+      }
+
+      p {
+        margin-bottom: 2rem;
+      }
+    }
   }
 
 }

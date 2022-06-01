@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
-import imgAbout from './../../assets/image2.png'
+import imgAbout from './../../assets/image3.png'
 
 
 export function About() {
@@ -15,7 +15,7 @@ export function About() {
           layout="responsive"
         />
         <div className={styles.data}>
-          <div className={styles.Info}>
+          <div className={styles.info}>
             <div className={styles.box}>
               <i className='bx bx-award'></i>
               <h3>Experience</h3>
