@@ -65,7 +65,7 @@ export function Contact() {
 
             <div className={styles.field}>
               <label>Message</label>
-              <textarea className={styles.input} name='' id='' cols={''} rows={''}  placeholder='Write your project' ></textarea>
+              <textarea className={styles.input} placeholder='Write your project' ></textarea>
             </div>
 
             <button className='button'>Send Message</button>
