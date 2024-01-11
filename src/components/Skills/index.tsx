@@ -4,7 +4,7 @@ export function Skills() {
   return (
     <section className={styles.skills} id="skills">
       <span>My abilities</span>
-      <h2>My Experiencie</h2>
+      <h2>Experience using technologies</h2>
       <div className={styles.grid}>
         <div className={styles.content}>
           <h3 className={styles.title}>
@@ -16,7 +16,7 @@ export function Skills() {
                 <i className='bx bx-badge-check'></i>
                 <div>
                   <h3>HTML</h3>
-                  <span>Basic</span>
+                  <span>Advanced</span>
                 </div>
               </div>
 
@@ -49,15 +49,15 @@ export function Skills() {
               <div className={styles.data}>
                 <i className='bx bx-badge-check'></i>
                 <div>
-                  <h3>Git</h3>
-                  <span>Intermediate</span>
+                  <h3>Chakra UI</h3>
+                  <span>Basic</span>
                 </div>
               </div>
 
               <div className={styles.data}>
                 <i className='bx bx-badge-check'></i>
                 <div>
-                  <h3>React</h3>
+                  <h3>React JS</h3>
                   <span>Intermediate</span>
                 </div>
               </div>
@@ -100,8 +100,8 @@ export function Skills() {
               <div className={styles.data}>
                 <i className='bx bx-badge-check'></i>
                 <div>
-                  <h3>Firebase</h3>
-                  <span>Basic</span>
+                  <h3>Wordpress</h3>
+                  <span>Intermediate</span>
                 </div>
               </div>
 

@@ -30,7 +30,8 @@
     .navMenu {
       position: fixed;
       bottom: 1rem;
-      background-color: hsl(var(--second-hue), 32%, 16%, .8);
+      background-color: var(--navMenu);
+      transition: .4s;
       width: 90%;
       border-radius: 4rem;
       padding: 1rem 2.25rem;
@@ -54,6 +55,53 @@
           }    
 
         }
+      }
+    }
+   
+    .changeTheme {
+      font-size: 1.25rem;
+      cursor: pointer;
+      transition: .3s;
+    }
+  
+    .changeTheme:hover {
+      color: var(--first-color);
+    }
+  }
+}
+
+.light .navMenu {
+  background-color: hsla(var(--second-hue), 32%, 90%, .8);
+}
+
+ /*== Breaks points */
+ @media screen  and (max-width:320px){
+  .navMenu {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media screen  and (max-width:576px){
+  .navMenu {
+    width: 328px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+@media screen  and (min-width:820px){
+  
+  .headerContainer {
+    background: transparent;
+
+    .navContainer {
+      background: transparent;
+      max-width: 100vw;
+
+      .navMenu {
+        display: none;
+        opacity: 0;
       }
     }
   }

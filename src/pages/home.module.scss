@@ -1,7 +1,22 @@
 
 .container {
+  
 
-  main {
-    overflow: hidden;
-  }
+  transition: .4s;
+  overflow: hidden;
+}
+
+@media screen  and (min-width:820px){
+ .container {
+
+  background: var(--backImage);
+
+
+  //background-color: var(--body-color);
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+ }
 }
