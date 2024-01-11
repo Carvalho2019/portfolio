@@ -12,9 +12,9 @@ export function Footer() {
         </ul>
 
         <ul className={styles.footerSocial}>
-          <a className={styles.footerLink} href='https://www.github.com/carvalho2019' target='_blank'> <i className='bx bxl-github'></i> </a>
-          <a className={styles.footerLink} href='https://www.instagram.com/cesario_miguel15/' target='_blank'> <i className='bx bxl-instagram'></i> </a>
-          <a className={styles.footerLink} href='https://www.linkedin.com/in/clesio-carvalho/' target='_blank'> <i className='bx bxl-linkedin'></i> </a>          
+          <a className={styles.footerLink} href='https://www.github.com/carvalho2019' target='_blank' rel='noreferrer'> <i className='bx bxl-github'></i> </a>
+          <a className={styles.footerLink} href='https://www.instagram.com/cesario_miguel15/' target='_blank' rel='noreferrer'> <i className='bx bxl-instagram'></i> </a>
+          <a className={styles.footerLink} href='https://www.linkedin.com/in/clesio-carvalho/' target='_blank' rel='noreferrer'> <i className='bx bxl-linkedin'></i> </a>          
         </ul>
 
         <span className={styles.footerCopy}>

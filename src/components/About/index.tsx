@@ -35,11 +35,11 @@ export function About() {
             I have years of experience and many clients are happy
             with the projects carried out
 
-            Art and technology have always fascinated me and I've never been afraid
-            to just jump in and give it a try, whether it's Paint, Photoshop or CSS. 
+            Art and technology have always fascinated me and Ive never been afraid
+            to just jump in and give it a try, whether its Paint, Photoshop or CSS. 
             Programming It goes beyond designing buttons and websites, having a passion 
             for designing experiences and solutions that help people, Leaning on the 
-            customer's vision and understanding their needs, finding the right problems 
+            customers vision and understanding their needs, finding the right problems 
             to solve, delivering solutions as quickly as possible, learning from them.
             It resonates so deeply with me because I have no desire to do beautiful things 
             just
