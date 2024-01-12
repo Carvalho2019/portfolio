@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react'
 
 export function Work() {
   const [isConfirme, setIsConfirme] = useState('all')
-  /*
+  
     useEffect(() => {
       mixitup(".itemsGrid", {
         selectors: {
@@ -23,7 +23,7 @@ export function Work() {
           duration: 500
         }
       });
-    }, []); */
+    }, []); 
 
   return (
     <section id='work' className={styles.work} >
@@ -50,14 +50,14 @@ export function Work() {
             <span className={styles.cardDescription}>
               Aplicação web
             </span>
-            <h3 className={styles.cardTitle}> 
+            <h3 className={styles.cardTitle}>
               FIEC
             </h3>
             <a href='https://economia-compartilhada.vercel.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
+            </a>
           </div>
-          
+
         </div>
 
 
@@ -70,16 +70,16 @@ export function Work() {
           />
           <div className={styles.cardData}>
             <span className={styles.cardDescription}>
-              Site informativo 
+              Site informativo
             </span>
-            <h3 className={styles.cardTitle}> 
+            <h3 className={styles.cardTitle}>
               Arranjaí - prestação de serviços
             </h3>
             <a href='https://leading-page-arranjai.vercel.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
+            </a>
           </div>
-          
+
         </div>
 
         <div data-order="3" className={`${styles.card} itemCard mix web`}>
@@ -91,16 +91,16 @@ export function Work() {
           />
           <div className={styles.cardData}>
             <span className={styles.cardDescription}>
-              Sistema de Gerenciamento 
+              Sistema de Gerenciamento
             </span>
-            <h3 className={styles.cardTitle}> 
+            <h3 className={styles.cardTitle}>
               Arranjaí - back office
             </h3>
             <a href='https://backofficearranjai.vercel.app/auth/signin' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
+            </a>
           </div>
-          
+
         </div>
         <div data-order="4" className={`${styles.card} itemCard mix web`}>
           <Image
@@ -111,16 +111,16 @@ export function Work() {
           />
           <div className={styles.cardData}>
             <span className={styles.cardDescription}>
-              Aplicação Web 
+              Aplicação Web
             </span>
-            <h3 className={styles.cardTitle}> 
+            <h3 className={styles.cardTitle}>
               Espaço G5
             </h3>
             <a href='https://espacog5.com/' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
+            </a>
           </div>
-          
+
         </div>
         <div data-order="5" className={`${styles.card} itemCard mix web`}>
           <Image
@@ -131,16 +131,16 @@ export function Work() {
           />
           <div className={styles.cardData}>
             <span className={styles.cardDescription}>
-              Aplicação Web 
+              Aplicação Web
             </span>
-            <h3 className={styles.cardTitle}> 
+            <h3 className={styles.cardTitle}>
               FG Academy
             </h3>
             <a href='https://fgacademy.ao/' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
+            </a>
           </div>
-          
+
         </div>
 
         <div data-order="5" className={`${styles.card} itemCard mix web`}>
@@ -152,16 +152,16 @@ export function Work() {
           />
           <div className={styles.cardData}>
             <span className={styles.cardDescription}>
-              Aplicação Web 
+              Aplicação Web
             </span>
-            <h3 className={styles.cardTitle}> 
+            <h3 className={styles.cardTitle}>
               Example Of Post
             </h3>
-            <a href='https://fgacademy.ao/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+            <a href='https://dapper-selkie-0dbfea.netlify.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
+            </a>
           </div>
-          
+
         </div>
 
         <div data-order="5" className={`${styles.card} itemCard mix web`}>
@@ -173,18 +173,18 @@ export function Work() {
           />
           <div className={styles.cardData}>
             <span className={styles.cardDescription}>
-              Aplicação Web 
+              Aplicação Web
             </span>
-            <h3 className={styles.cardTitle}> 
+            <h3 className={styles.cardTitle}>
               Akiu
             </h3>
-            <a href='https://fgacademy.ao/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+            <a href='https://super-paprenjak-463334.netlify.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
+            </a>
           </div>
-          
+
         </div>
-{/*
+        {/*
         <div data-order="4" className={`${styles.card} itemCard mix mobile`}>
           <Image
             src={imgWork}
