@@ -1,12 +1,12 @@
 
 .footer {
-  background-color: var(--first-color);
+  background-color: var(--container-color);
 
   padding: 2.5rem 1rem 5rem;
   row-gap: 1.5rem;
   
   .footerTitle, .footerLink {
-    color: var(--body-color);
+    color: var(--first-color);
   }
 
   .footerTitle {
@@ -44,7 +44,7 @@
   .footerCopy {
     display: block;
     margin-top: 1rem;
-    color: var(--container-color);
+    color: var(--text-color-light);
     text-align: center;
     font-size: var(--smaller-font-size);
   }

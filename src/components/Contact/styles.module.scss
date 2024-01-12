@@ -46,12 +46,14 @@
           span {
             display: block;
             margin-bottom: .75rem;
-            
+            color: var(--text-color-light);
           }
 
           a {
             
-            color: var(--first-color);
+            color: var(--colorBlue);
+            text-transform: uppercase;
+            font-weight: 500;
             font-size: var(--normal-font-size);
             display: flex;
             align-items: center;

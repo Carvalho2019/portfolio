@@ -1,6 +1,13 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
 import imgWork from './../../assets/work1.jpeg'
+import imgArranjaWeb from './../../assets/arranja_site.jpeg'
+import imgArranjaBack from './../../assets/arranja_back.jpeg'
+import imgFiec from './../../assets/fiec.jpeg'
+import imgEspaco from './../../assets/espacog5.jpeg'
+import imgFgacademy from './../../assets/fgacademy.jpeg'
+import imgAkiu from './../../assets/akiu.jpeg'
+import imgReseSocial from './../../assets/rede_social.jpeg'
 import mixitup from 'mixitup'
 import { useEffect, useState } from 'react'
 
@@ -34,26 +41,151 @@ export function Work() {
       <div className={`${styles.grid} itemsGrid`}>
         <div data-order="1" className={`${styles.card} itemCard mix web`}>
           <Image
-            src={imgWork}
+            src={imgFiec}
             alt="Picture of the author"
             layout="responsive"
             className={styles.cardImg}
           />
           <div className={styles.cardData}>
             <span className={styles.cardDescription}>
-              Web Design Reality people go in, free call me on maybe run  
+              Aplicação web
             </span>
             <h3 className={styles.cardTitle}> 
-              Page for instagram
+              FIEC
             </h3>
-            <a href='#' className={styles.cardButton}>
+            <a href='https://economia-compartilhada.vercel.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
             </a> 
           </div>
           
         </div>
 
-        <div data-order="2" className={`${styles.card} itemCard mix mobile`}>
+
+        <div data-order="2" className={`${styles.card} itemCard mix web`}>
+          <Image
+            src={imgArranjaWeb}
+            alt="Picture of the author"
+            layout="responsive"
+            className={styles.cardImg}
+          />
+          <div className={styles.cardData}>
+            <span className={styles.cardDescription}>
+              Site informativo 
+            </span>
+            <h3 className={styles.cardTitle}> 
+              Arranjaí - prestação de serviços
+            </h3>
+            <a href='https://leading-page-arranjai.vercel.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+              Open Demo <i className='bx bx-right-arrow-alt'></i>
+            </a> 
+          </div>
+          
+        </div>
+
+        <div data-order="3" className={`${styles.card} itemCard mix web`}>
+          <Image
+            src={imgArranjaBack}
+            alt="Picture of the author"
+            layout="responsive"
+            className={styles.cardImg}
+          />
+          <div className={styles.cardData}>
+            <span className={styles.cardDescription}>
+              Sistema de Gerenciamento 
+            </span>
+            <h3 className={styles.cardTitle}> 
+              Arranjaí - back office
+            </h3>
+            <a href='https://backofficearranjai.vercel.app/auth/signin' target='_blank' rel='noreferrer' className={styles.cardButton}>
+              Open Demo <i className='bx bx-right-arrow-alt'></i>
+            </a> 
+          </div>
+          
+        </div>
+        <div data-order="4" className={`${styles.card} itemCard mix web`}>
+          <Image
+            src={imgEspaco}
+            alt="Picture of the author"
+            layout="responsive"
+            className={styles.cardImg}
+          />
+          <div className={styles.cardData}>
+            <span className={styles.cardDescription}>
+              Aplicação Web 
+            </span>
+            <h3 className={styles.cardTitle}> 
+              Espaço G5
+            </h3>
+            <a href='https://espacog5.com/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+              Open Demo <i className='bx bx-right-arrow-alt'></i>
+            </a> 
+          </div>
+          
+        </div>
+        <div data-order="5" className={`${styles.card} itemCard mix web`}>
+          <Image
+            src={imgFgacademy}
+            alt="Picture of the author"
+            layout="responsive"
+            className={styles.cardImg}
+          />
+          <div className={styles.cardData}>
+            <span className={styles.cardDescription}>
+              Aplicação Web 
+            </span>
+            <h3 className={styles.cardTitle}> 
+              FG Academy
+            </h3>
+            <a href='https://fgacademy.ao/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+              Open Demo <i className='bx bx-right-arrow-alt'></i>
+            </a> 
+          </div>
+          
+        </div>
+
+        <div data-order="5" className={`${styles.card} itemCard mix web`}>
+          <Image
+            src={imgReseSocial}
+            alt="Picture of the author"
+            layout="responsive"
+            className={styles.cardImg}
+          />
+          <div className={styles.cardData}>
+            <span className={styles.cardDescription}>
+              Aplicação Web 
+            </span>
+            <h3 className={styles.cardTitle}> 
+              Example Of Post
+            </h3>
+            <a href='https://fgacademy.ao/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+              Open Demo <i className='bx bx-right-arrow-alt'></i>
+            </a> 
+          </div>
+          
+        </div>
+
+        <div data-order="5" className={`${styles.card} itemCard mix web`}>
+          <Image
+            src={imgAkiu}
+            alt="Picture of the author"
+            layout="responsive"
+            className={styles.cardImg}
+          />
+          <div className={styles.cardData}>
+            <span className={styles.cardDescription}>
+              Aplicação Web 
+            </span>
+            <h3 className={styles.cardTitle}> 
+              Akiu
+            </h3>
+            <a href='https://fgacademy.ao/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+              Open Demo <i className='bx bx-right-arrow-alt'></i>
+            </a> 
+          </div>
+          
+        </div>
+{/*
+        <div data-order="4" className={`${styles.card} itemCard mix mobile`}>
           <Image
             src={imgWork}
             alt="Picture of the author"
@@ -75,7 +207,7 @@ export function Work() {
         </div>
 
 
-        <div data-order="3" className={`${styles.card} itemCard mix design`}>
+        <div data-order="5" className={`${styles.card} itemCard mix design`}>
           <Image
             src={imgWork}
             alt="Picture of the author"
@@ -94,7 +226,7 @@ export function Work() {
             </a> 
           </div>
           
-        </div>
+  </div> */}
 
 
       </div>

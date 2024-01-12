@@ -10,7 +10,7 @@ export function Hero() {
 
         <div className={styles.data}>
           <span></span>
-          <h1>Hello, I´m Clésio Carvalho</h1>
+          <h1>Hello, I´m <a>Clésio Carvalho</a></h1>
           <h3>Full-stack Developer, Specialize in building innovative using technologies</h3>
 
           <div className={styles.HomeButtons}>
