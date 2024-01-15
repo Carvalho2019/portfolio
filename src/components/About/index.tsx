@@ -32,7 +32,7 @@ export function About() {
 
           <p>
             I have years of experience and many clients are happy with the projects 
-            carried out. I'm a passionate software developer for code. 
+            carried out. Im a passionate software developer for code. 
             Programming It goes beyond designing buttons and websites, 
             having a passion for designing experiences and solutions that help people, 
             Leaning on the customers vision and understanding their needs. <br></br><br></br>
