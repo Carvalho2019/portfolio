@@ -31,18 +31,16 @@ export function About() {
           </div>
 
           <p>
-            Frontend developer, I create web pages with UI/UX user interface,
-            I have years of experience and many clients are happy
-            with the projects carried out
+            I have years of experience and many clients are happy with the projects 
+            carried out. I'm a passionate software developer for code. 
+            Programming It goes beyond designing buttons and websites, 
+            having a passion for designing experiences and solutions that help people, 
+            Leaning on the customers vision and understanding their needs. <br></br><br></br>
+            At the moment, I am working as a freelancer and seeking knowledge 
+            to complement and increase my skills and knowledge in the area of 
+            Technology, participating in events and conducting bootcamps. 
 
-            Art and technology have always fascinated me and Ive never been afraid
-            to just jump in and give it a try, whether its Paint, Photoshop or CSS. 
-            Programming It goes beyond designing buttons and websites, having a passion 
-            for designing experiences and solutions that help people, Leaning on the 
-            customers vision and understanding their needs, finding the right problems 
-            to solve, delivering solutions as quickly as possible, learning from them.
-            It resonates so deeply with me because I have no desire to do beautiful things 
-            just
+            
           </p>
 
           <a download="" href='./../../assets/CurriculumVitaeGeral.pdf' className='button'>Download My Resume</a>

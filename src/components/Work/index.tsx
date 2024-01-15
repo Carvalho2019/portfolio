@@ -1,19 +1,29 @@
 import styles from './styles.module.scss'
 import Image from 'next/image'
-import imgWork from './../../assets/work1.jpeg'
-import imgArranjaWeb from './../../assets/arranja_site.jpeg'
-import imgArranjaBack from './../../assets/arranja_back.jpeg'
-import imgFiec from './../../assets/fiec.jpeg'
-import imgEspaco from './../../assets/espacog5.jpeg'
-import imgFgacademy from './../../assets/fgacademy.jpeg'
-import imgAkiu from './../../assets/akiu.jpeg'
-import imgReseSocial from './../../assets/rede_social.jpeg'
+import imgWork from './../../assets/projects/work1.jpeg'
+import imgArranjaWeb from './../../assets/projects/arranja_site.jpeg'
+import imgArranjaBack from './../../assets/projects/arranja_back.jpeg'
+import imgFiec from './../../assets/projects/fiec.jpeg'
+import imgEspaco from './../../assets/projects/espacog5.jpeg'
+import imgFgacademy from './../../assets/projects/fgacademy.jpeg'
+import imgAkiu from './../../assets/projects/akiu.jpeg'
+import imgReseSocial from './../../assets/projects/rede_social.jpeg'
+import imgDtmoney from './../../assets/projects/dtmoney.jpeg'
+import imgDashgo from './../../assets/projects/dashgo.jpeg'
 import mixitup from 'mixitup'
 import { useEffect, useState } from 'react'
+
+/*
+import dynamic from "next/dynamic";
+const mixitup = dynamic(() => import('mixitup'), {
+  ssr: false,
+}); */
+
 
 export function Work() {
   const [isConfirme, setIsConfirme] = useState('all')
   
+    /* 
     useEffect(() => {
       mixitup(".itemsGrid", {
         selectors: {
@@ -24,6 +34,7 @@ export function Work() {
         }
       });
     }, []); 
+    */
 
   return (
     <section id='work' className={styles.work} >
@@ -179,6 +190,46 @@ export function Work() {
               Akiu
             </h3>
             <a href='https://super-paprenjak-463334.netlify.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+              Open Demo <i className='bx bx-right-arrow-alt'></i>
+            </a>
+          </div>
+
+        </div>
+        <div data-order="6" className={`${styles.card} itemCard mix web`}>
+          <Image
+            src={imgDtmoney}
+            alt="Picture of the author"
+            layout="responsive"
+            className={styles.cardImg}
+          />
+          <div className={styles.cardData}>
+            <span className={styles.cardDescription}>
+              Aplicação Web
+            </span>
+            <h3 className={styles.cardTitle}>
+              Dt money
+            </h3>
+            <a href='https://65a39758e7ac41552ac30c02--beamish-vacherin-08bca6.netlify.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
+              Open Demo <i className='bx bx-right-arrow-alt'></i>
+            </a>
+          </div>
+
+        </div>
+        <div data-order="7" className={`${styles.card} itemCard mix web`}>
+          <Image
+            src={imgDashgo}
+            alt="Picture of the author"
+            layout="responsive"
+            className={styles.cardImg}
+          />
+          <div className={styles.cardData}>
+            <span className={styles.cardDescription}>
+              Dashboard General
+            </span>
+            <h3 className={styles.cardTitle}>
+              Dash GO
+            </h3>
+            <a href='https://lighthearted-alpaca-f33b45.netlify.app/dashboard' target='_blank' rel='noreferrer' className={styles.cardButton}>
               Open Demo <i className='bx bx-right-arrow-alt'></i>
             </a>
           </div>
