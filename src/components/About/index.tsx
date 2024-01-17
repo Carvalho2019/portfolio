@@ -20,7 +20,7 @@ export function About() {
             <div className={styles.box}>
               <i className='bx bx-briefcase-alt'></i>
               <h3>Completed</h3>
-              <span>7+ Projects</span>
+              <span>12+ Projects</span>
             </div>
 
             <div className={styles.box}>

@@ -33,13 +33,13 @@ export function Services() {
       <h2>What I offer</h2>
       <div className={styles.grid}>
       <div className={styles.card}>
-          <h3>Create <br /> System </h3>
+          <h3>Web <br /> Developers </h3>
           <span onClick={openModalTech}>
             See more <i className='bx bx-right-arrow-alt'></i>
           </span>
 
           <Modal
-            titleModal='Create System'
+            titleModal='Web Developers'
             contentModal='Service with more than 3 years of experience Providing quality work to clients and companies'
             isOpen={isOpenTech}
             onRequestClose={onRequestClose}
@@ -48,13 +48,13 @@ export function Services() {
         </div>
 
         <div className={styles.card}>
-          <h3>Product <br /> Designer </h3>
+          <h3>Web <br /> Designers </h3>
           <span onClick={openModalDesign}>
             See more <i className='bx bx-right-arrow-alt'></i>
           </span>
 
           <Modal
-            titleModal='Product Designer'
+            titleModal='Web Designers'
             contentModal='Service with more than 3 years of experience Providing quality work to clients and companies'
             isOpen={isOpenDesign}
             onRequestClose={onRequestClose}
@@ -63,14 +63,14 @@ export function Services() {
         </div>
        
         <div className={styles.card}>
-          <h3>Ui / Ux <br /> Designer</h3>
+          <h3>Ui / Ux <br /> Interface</h3>
           <span onClick={openModalDeveloper}>
             See more <i className='bx bx-right-arrow-alt'></i>
           </span>
 
           <Modal
-            titleModal='Ui / Ux Designer'
-            contentModal='Service with more than 3 years of experience Providing quality work to clients and companies'
+            titleModal='Ui / Ux Interface'
+            contentModal='Beautiful and elegant designs with interfaces that are intuitive, efficient and pleasant to use for the user'
             isOpen={isOpenDeveloper}
             onRequestClose={onRequestClose} />
         </div>
