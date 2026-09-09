@@ -15,12 +15,12 @@ export default function Home() {
         <title>Clésio Carvalho | Full-stack Developer</title>
         <meta
           name="description"
-          content="Portfolio de Clésio Carvalho, full-stack developer especializado em aplicações web e produtos digitais."
+          content="Portfolio of Clésio Carvalho, full-stack developer specializing in web applications and digital products."
         />
         <meta property="og:title" content="Clésio Carvalho | Full-stack Developer" />
         <meta
           property="og:description"
-          content="Conheça os projetos e serviços de Clésio Carvalho."
+          content="Discover Clésio Carvalho's projects and services."
         />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/android-chrome-512x512.png" />
