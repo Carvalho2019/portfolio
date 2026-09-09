@@ -45,7 +45,9 @@ export function About() {
         </div>
         <Image
           src={imgAbout}
-          alt="Picture of the author"
+          alt="Clésio Carvalho a trabalhar como developer"
+          width={1024}
+          height={1024}
           layout="responsive"
           className={styles.ImageAbout}
         />

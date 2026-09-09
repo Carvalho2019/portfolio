@@ -50,7 +50,14 @@ export function Work() {
         )}
         {visibleProjects.map(project => (
           <article className={`${styles.card} itemCard`} key={project.title}>
-            <Image src={project.image} alt={`Pré-visualização do projeto ${project.title}`} className={styles.cardImg} />
+            <Image
+              src={project.image}
+              alt={`Pré-visualização do projeto ${project.title}`}
+              width={1184}
+              height={655}
+              layout="responsive"
+              className={styles.cardImg}
+            />
             <div className={styles.cardData}>
               <span className={styles.cardDescription}>{project.description}</span>
               <h3 className={styles.cardTitle}>{project.title}</h3>
