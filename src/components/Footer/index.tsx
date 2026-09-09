@@ -6,9 +6,9 @@ export function Footer() {
   return (
     <footer id="footer" className={styles.footer}>
       <div>
-        <h1 className={styles.footerTitle}>DevCarvalho</h1>
+        <h1 className={styles.footerTitle}>Clésio Carvalho</h1>
         <ul className={styles.footerList}>
-          <li> <a href='#home'>Back to top  <i className='bx bxs-up-arrow'></i></a></li>
+          <li> <a href='#home'>Voltar ao início <i className='bx bxs-up-arrow'></i></a></li>
         </ul>
 
         <ul className={styles.footerSocial}>
@@ -18,7 +18,7 @@ export function Footer() {
         </ul>
 
         <span className={styles.footerCopy}>
-          &#169; 2024 Carvalho. All rigths reserved.
+          &#169; {new Date().getFullYear()} Clésio Carvalho. Todos os direitos reservados.
         </span>
       </div>
     </footer>

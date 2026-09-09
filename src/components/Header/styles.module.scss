@@ -61,6 +61,8 @@
       font-size: 1.25rem;
       cursor: pointer;
       transition: .3s;
+      background: transparent;
+      color: inherit;
     }
   
     .changeTheme:hover {

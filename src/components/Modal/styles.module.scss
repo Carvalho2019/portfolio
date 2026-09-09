@@ -1,8 +1,3 @@
-.activeModal {
-  opacity: 0;
-  visibility: hidden;
-}
-
 .modal {
   position: fixed;
   inset: 0;
@@ -21,13 +16,17 @@
     padding: 4.5rem 1.5rem 2.5rem;
     border-radius: 1.5rem;
 
-    > i {
+    .close {
       position: absolute;
       top: 1.5rem;
       right: 1.5rem;
       font-size: 1.5rem;
       color: var(--colorBlue);
       cursor: pointer;
+      border: 0;
+      background: transparent;
+      color: var(--colorBlue);
+      font-size: 1.5rem;
     }
   }
 

@@ -144,6 +144,19 @@ button {
   outline: none;
 }
 
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--colorBlue);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+}
+
 .button {
   display: inline-block;
   background-color: var(--first-color);
@@ -171,4 +184,3 @@ img {
   display: block;
   position: relative;
 }
-

@@ -1,4 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio de Clésio Carvalho
+
+Portfolio pessoal de um full-stack developer, construído com Next.js, React, TypeScript e Sass.
+
+## Desenvolvimento local
+
+```bash
+npm install
+npm run dev
+```
+
+Abra [http://localhost:3000](http://localhost:3000).
+
+## Scripts
+
+- `npm run dev` inicia o ambiente de desenvolvimento.
+- `npm run lint` executa o ESLint.
+- `npm run build` cria o build de produção.
+- `npm run start` inicia a versão de produção.
+
+## Estrutura
+
+- `src/components`: secções reutilizáveis da página.
+- `src/pages`: página principal, documento HTML e endpoints.
+- `src/assets`: imagens importadas e processadas pelo Next.js.
+- `public`: CV, favicon, sitemap e robots.txt.
+
+Os projetos em destaque são mantidos no array de dados em `src/components/Work/index.tsx`.
+Atualize títulos, descrições, tecnologias e URLs quando adicionar novos trabalhos.
+
+O formulário de contacto abre um email pré-preenchido através do cliente de email do visitante.
+Para usar um serviço transacional, substitua o handler em `src/components/Contact/index.tsx`
+por um endpoint seguro e configure as variáveis de ambiente no provedor de deploy.
 
 ## Getting Started
 

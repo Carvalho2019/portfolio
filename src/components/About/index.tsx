@@ -1,49 +1,47 @@
 import Image from 'next/image'
 import styles from './styles.module.scss'
-import imgAbout from './../../assets/about.jpeg'
+const imgAbout = '/images/about.jpeg'
 
 
 export function About() {
   return (
     <section className={styles.about} id="about">
-      <span> My intro</span>
-      <h2>software developer freelancer</h2>
+      <span>Sobre mim</span>
+      <h2>Desenvolvedor de software freelancer</h2>
       <div className={styles.grid}>
         <div className={styles.data}>
           <div className={styles.info}>
             <div className={styles.box}>
               <i className='bx bx-award'></i>
               <h3>Experience</h3>
-              <span>4 Years Working</span>
+              <span>Experiência profissional</span>
             </div>
 
             <div className={styles.box}>
               <i className='bx bx-briefcase-alt'></i>
               <h3>Completed</h3>
-              <span>12+ Projects</span>
+              <span>12+ projetos</span>
             </div>
 
             <div className={styles.box}>
               <i className='bx bx-support'></i>
               <h3>Support</h3>
-              <span>Online 24/7</span>
+              <span>Comunicação próxima</span>
             </div>
           </div>
 
           <p>
-            I have years of experience and many clients are happy with the projects 
-            carried out. Im a passionate software developer for code. 
-            Programming It goes beyond designing buttons and websites, 
-            having a passion for designing experiences and solutions that help people, 
-            Leaning on the customers vision and understanding their needs. <br></br><br></br>
-            At the moment, I am working as a freelancer and seeking knowledge 
-            to complement and increase my skills and knowledge in the area of 
-            Technology, participating in events and conducting bootcamps. 
+            Desenvolvo experiências digitais com foco em clareza, performance e resultados.
+            Gosto de transformar necessidades reais em interfaces simples e aplicações
+            confiáveis, trabalhando próximo de cada cliente e equipa.
+            <br></br><br></br>
+            Atualmente trabalho como freelancer e continuo a evoluir através de projetos,
+            eventos e formação contínua em tecnologia.
 
             
           </p>
 
-          <a download="" href='./../../assets/CurriculumVitaeGeral.pdf' className='button'>Download My Resume</a>
+          <a download href='/CurriculumVitaeGeral.pdf' className='button'>Baixar currículo</a>
         </div>
         <Image
           src={imgAbout}

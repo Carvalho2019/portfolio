@@ -5,7 +5,9 @@
       text-align: center;
   }
 
-  span {
+  button {
+    border: 0;
+    background: transparent;
     display: block;
     font-size: var(--smaller-font-size);
     color: var(--first-color);
@@ -52,6 +54,7 @@
         align-items: center;
         column-gap: .25rem;
         cursor: pointer;
+        font: inherit;
 
         //icon button
 

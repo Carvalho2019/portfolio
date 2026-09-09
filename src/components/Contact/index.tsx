@@ -1,77 +1,57 @@
-
+import { FormEvent, useState } from 'react'
 import styles from './styles.module.scss'
 
-
 export function Contact() {
+  const [status, setStatus] = useState('')
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const form = event.currentTarget
+    const data = new FormData(form)
+    const name = String(data.get('name') || '')
+    const email = String(data.get('email') || '')
+    const message = String(data.get('message') || '')
+    const subject = encodeURIComponent(`Contacto do portfolio - ${name}`)
+    const body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`)
+    window.location.href = `mailto:taisomcarvalho15@gmail.com?subject=${subject}&body=${body}`
+    setStatus('O seu cliente de email foi aberto para concluir o envio.')
+    form.reset()
+  }
+
   return (
     <section id="contact" className={styles.contact}>
-      <span>
-      Talk to me
-      </span>
-      <h2>Enjoyed my work? Let’s work together</h2>
+      <span>Contacto</span>
+      <h2>Vamos transformar uma ideia em produto</h2>
       <div className={styles.grid}>
-
         <div className={styles.contentContact}>
-         {/* <h3 className={styles.title}></h3> */}
           <div className={styles.info}>
             <div className={styles.card}>
-              <div className={styles.iconGroup}>
-                <i className='bx bx-mail-send'></i>
-                <h3>Email</h3>
-              </div>
-              
+              <div className={styles.iconGroup}><i className="bx bx-mail-send"></i><h3>Email</h3></div>
               <span>taisomcarvalho15@gmail.com</span>
-              <a rel='noreferrer' href='mailto:taisomcarvalho15@gmail.com' target='_blank'>
-                Write Me <i className='bx bx-right-arrow-alt'></i>
-              </a>
+              <a href="mailto:taisomcarvalho15@gmail.com">Escrever <i className="bx bx-right-arrow-alt"></i></a>
             </div>
-
             <div className={styles.card}>
-              <div className={styles.iconGroup}>
-                <i className='bx bxl-whatsapp'></i>
-                <h3>Whatsapp</h3>
-              </div>
+              <div className={styles.iconGroup}><i className="bx bxl-whatsapp"></i><h3>WhatsApp</h3></div>
               <span>+244 946 853 092</span>
-              <a rel='noreferrer' href='https://api.whatsapp.com/send?phone=946853092&text=Hello, more information' target='_blank'>
-                Write me <i className='bx bx-right-arrow-alt'></i>
-              </a>
+              <a href="https://api.whatsapp.com/send?phone=244946853092&text=Olá%2C%20gostaria%20de%20saber%20mais." target="_blank" rel="noreferrer">Escrever <i className="bx bx-right-arrow-alt"></i></a>
             </div>
-
             <div className={styles.card}>
-              <div className={styles.iconGroup}>
-                <i className='bx bxl-linkedin'></i>
-                <h3>Linkedin</h3>
-              </div>
-              <span>  </span>
-              <a href='#' target='_blank'>
-                Write me <i className='bx bx-right-arrow-alt'></i>
-              </a>
+              <div className={styles.iconGroup}><i className="bx bxl-linkedin"></i><h3>LinkedIn</h3></div>
+              <span>Perfil profissional</span>
+              <a href="https://www.linkedin.com/in/clesio-carvalho/" target="_blank" rel="noreferrer">Visitar <i className="bx bx-right-arrow-alt"></i></a>
             </div>
           </div>
         </div>
-
         <div className={styles.contentContact}>
-          <h3 className={styles.title}>Write me your message</h3>
-          <form>
-            <div className={styles.field}>
-              <label>Name</label>
-              <input className={styles.input} type='text' placeholder='Write your name'/>
-            </div>
-
-            <div className={styles.field}>
-              <label>Mail</label>
-              <input className={styles.input} type='text' placeholder='Write your E-mail'/>
-            </div>
-
-            <div className={styles.field}>
-              <label>Message</label>
-              <textarea className={styles.input} placeholder='Write your project' ></textarea>
-            </div>
-
-            <button className='button'>Send Message</button>
+          <h3 className={styles.title}>Envie uma mensagem</h3>
+          <form onSubmit={handleSubmit}>
+            <div className={styles.field}><label htmlFor="name">Nome</label><input id="name" name="name" className={styles.input} type="text" placeholder="O seu nome" required /></div>
+            <div className={styles.field}><label htmlFor="email">Email</label><input id="email" name="email" className={styles.input} type="email" placeholder="O seu email" required /></div>
+            <div className={styles.field}><label htmlFor="message">Mensagem</label><textarea id="message" name="message" className={styles.input} placeholder="Fale sobre o seu projeto" required /></div>
+            <button className="button" type="submit">Enviar mensagem</button>
+            {status && <p role="status">{status}</p>}
           </form>
         </div>
-
       </div>
     </section>
   )

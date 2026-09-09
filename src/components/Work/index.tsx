@@ -1,285 +1,66 @@
-import styles from './styles.module.scss'
 import Image from 'next/image'
-import imgWork from './../../assets/projects/work1.jpeg'
-import imgArranjaWeb from './../../assets/projects/arranja_site.jpeg'
-import imgArranjaBack from './../../assets/projects/arranja_back.jpeg'
-import imgFiec from './../../assets/projects/fiec.jpeg'
-import imgEspaco from './../../assets/projects/espacog5.jpeg'
-import imgFgacademy from './../../assets/projects/fgacademy.jpeg'
-import imgAkiu from './../../assets/projects/akiu.jpeg'
-import imgReseSocial from './../../assets/projects/rede_social.jpeg'
-import imgDtmoney from './../../assets/projects/dtmoney.jpeg'
-import imgDashgo from './../../assets/projects/dashgo.jpeg'
-import mixitup from 'mixitup'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import styles from './styles.module.scss'
 
-/*
-import dynamic from "next/dynamic";
-const mixitup = dynamic(() => import('mixitup'), {
-  ssr: false,
-}); */
+type Category = 'all' | 'web' | 'mobile' | 'design'
+type Project = {
+  title: string
+  description: string
+  category: Exclude<Category, 'all'>
+  image: string
+  href: string
+  stack: string
+}
 
+const projects: Project[] = [
+  { title: 'FIEC', description: 'Aplicação web para economia compartilhada.', category: 'web', image: '/images/projects/fiec.jpeg', href: 'https://economia-compartilhada.vercel.app/', stack: 'React · TypeScript' },
+  { title: 'Arranjaí', description: 'Plataforma para encontrar prestadores de serviços.', category: 'web', image: '/images/projects/arranja_site.jpeg', href: 'https://leading-page-arranjai.vercel.app/', stack: 'Next.js · React' },
+  { title: 'Arranjaí Back Office', description: 'Painel de gestão para operações da plataforma.', category: 'web', image: '/images/projects/arranja_back.jpeg', href: 'https://backofficearranjai.vercel.app/auth/signin', stack: 'Next.js · TypeScript' },
+  { title: 'Espaço G5', description: 'Aplicação web para uma experiência digital institucional.', category: 'web', image: '/images/projects/espacog5.jpeg', href: 'https://espacog5.com/', stack: 'React · CSS' },
+  { title: 'FG Academy', description: 'Plataforma web de formação e aprendizagem.', category: 'web', image: '/images/projects/fgacademy.jpeg', href: 'https://fgacademy.ao/', stack: 'React · UI' },
+  { title: 'Akiu', description: 'Interface web para um produto digital.', category: 'web', image: '/images/projects/akiu.jpeg', href: 'https://super-paprenjak-463334.netlify.app/', stack: 'React · JavaScript' },
+  { title: 'DT Money', description: 'Aplicação para acompanhamento de finanças pessoais.', category: 'web', image: '/images/projects/dtmoney.jpeg', href: 'https://65a39758e7ac41552ac30c02--beamish-vacherin-08bca6.netlify.app/', stack: 'React · TypeScript' },
+  { title: 'Dash Go', description: 'Dashboard responsivo para visualização de dados.', category: 'web', image: '/images/projects/dashgo.jpeg', href: 'https://lighthearted-alpaca-f33b45.netlify.app/dashboard', stack: 'React · Charts' },
+]
 
 export function Work() {
-  const [isConfirme, setIsConfirme] = useState('all')
-  
-    /* 
-    useEffect(() => {
-      mixitup(".itemsGrid", {
-        selectors: {
-          target: ".itemCard",
-        },
-        animation: {
-          duration: 500
-        }
-      });
-    }, []); 
-    */
+  const [category, setCategory] = useState<Category>('all')
+  const visibleProjects = projects.filter(project => category === 'all' || project.category === category)
 
   return (
-    <section id='work' className={styles.work} >
-      <span>
-        Recent Works
-      </span>
-      <h2>Take a look at my highlighted projects</h2>
-      <div className={styles.filters}>
-        <span onClick={() => setIsConfirme('all')} data-filter="all" className={`${styles.item} ${isConfirme === 'all' && styles.activeWork}`}>All</span>
-        <span onClick={() => setIsConfirme('web')} data-filter=".web" className={`${styles.item} ${isConfirme === 'web' && styles.activeWork}`}>Web</span>
-        <span onClick={() => setIsConfirme('mobile')} data-filter=".mobile" className={`${styles.item} ${isConfirme === 'mobile' && styles.activeWork}`}>Mobile</span>
-        <span onClick={() => setIsConfirme('design')} data-filter=".design" className={`${styles.item} ${isConfirme === 'design' && styles.activeWork}`}>Design</span>
+    <section id="work" className={styles.work}>
+      <span>Projetos em destaque</span>
+      <h2>Alguns trabalhos que desenvolvi</h2>
+      <div className={styles.filters} role="group" aria-label="Filtrar projetos">
+        {(['all', 'web', 'mobile', 'design'] as Category[]).map(item => (
+          <button
+            type="button"
+            key={item}
+            aria-pressed={category === item}
+            onClick={() => setCategory(item)}
+            className={`${styles.item} ${category === item ? styles.activeWork : ''}`}
+          >
+            {{ all: 'Todos', web: 'Web', mobile: 'Mobile', design: 'Design' }[item]}
+          </button>
+        ))}
       </div>
-
       <div className={`${styles.grid} itemsGrid`}>
-        <div data-order="1" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgFiec}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Aplicação web
-            </span>
-            <h3 className={styles.cardTitle}>
-              FIEC
-            </h3>
-            <a href='https://economia-compartilhada.vercel.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-
-
-        <div data-order="2" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgArranjaWeb}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Site informativo
-            </span>
-            <h3 className={styles.cardTitle}>
-              Arranjaí - prestação de serviços
-            </h3>
-            <a href='https://leading-page-arranjai.vercel.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-
-        <div data-order="3" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgArranjaBack}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Sistema de Gerenciamento
-            </span>
-            <h3 className={styles.cardTitle}>
-              Arranjaí - back office
-            </h3>
-            <a href='https://backofficearranjai.vercel.app/auth/signin' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-        <div data-order="4" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgEspaco}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Aplicação Web
-            </span>
-            <h3 className={styles.cardTitle}>
-              Espaço G5
-            </h3>
-            <a href='https://espacog5.com/' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-        <div data-order="5" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgFgacademy}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Aplicação Web
-            </span>
-            <h3 className={styles.cardTitle}>
-              FG Academy
-            </h3>
-            <a href='https://fgacademy.ao/' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-
-        <div data-order="5" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgReseSocial}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Aplicação Web
-            </span>
-            <h3 className={styles.cardTitle}>
-              Example Of Post
-            </h3>
-            <a href='https://dapper-selkie-0dbfea.netlify.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-
-        <div data-order="5" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgAkiu}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Aplicação Web
-            </span>
-            <h3 className={styles.cardTitle}>
-              Akiu
-            </h3>
-            <a href='https://super-paprenjak-463334.netlify.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-        <div data-order="6" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgDtmoney}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Aplicação Web
-            </span>
-            <h3 className={styles.cardTitle}>
-              Dt money
-            </h3>
-            <a href='https://65a39758e7ac41552ac30c02--beamish-vacherin-08bca6.netlify.app/' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-        <div data-order="7" className={`${styles.card} itemCard mix web`}>
-          <Image
-            src={imgDashgo}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Dashboard General
-            </span>
-            <h3 className={styles.cardTitle}>
-              Dash GO
-            </h3>
-            <a href='https://lighthearted-alpaca-f33b45.netlify.app/dashboard' target='_blank' rel='noreferrer' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a>
-          </div>
-
-        </div>
-        {/*
-        <div data-order="4" className={`${styles.card} itemCard mix mobile`}>
-          <Image
-            src={imgWork}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              App movil  
-            </span>
-            <h3 className={styles.cardTitle}> 
-              Page for instagram Brand Design
-            </h3>
-            <a href='#' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
-          </div>
-          
-        </div>
-
-
-        <div data-order="5" className={`${styles.card} itemCard mix design`}>
-          <Image
-            src={imgWork}
-            alt="Picture of the author"
-            layout="responsive"
-            className={styles.cardImg}
-          />
-          <div className={styles.cardData}>
-            <span className={styles.cardDescription}>
-              Brand Design
-            </span>
-            <h3 className={styles.cardTitle}> 
-              Page for instagram
-            </h3>
-            <a href='#' className={styles.cardButton}>
-              Open Demo <i className='bx bx-right-arrow-alt'></i>
-            </a> 
-          </div>
-          
-  </div> */}
-
-
+        {visibleProjects.length === 0 && (
+          <p role="status">Ainda não há projetos publicados nesta categoria.</p>
+        )}
+        {visibleProjects.map(project => (
+          <article className={`${styles.card} itemCard`} key={project.title}>
+            <Image src={project.image} alt={`Pré-visualização do projeto ${project.title}`} className={styles.cardImg} />
+            <div className={styles.cardData}>
+              <span className={styles.cardDescription}>{project.description}</span>
+              <h3 className={styles.cardTitle}>{project.title}</h3>
+              <small>{project.stack}</small>
+              <a href={project.href} target="_blank" rel="noreferrer" className={styles.cardButton}>
+                Ver projeto <i className="bx bx-right-arrow-alt"></i>
+              </a>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   )

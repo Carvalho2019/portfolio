@@ -3,76 +3,50 @@ import styles from './styles.module.scss'
 import { Modal } from '../Modal'
 
 export function Services() {
-  const [isOpenDeveloper, setIsOpenDeveloper] = useState('')
-  const [isOpenDesign, setIsOpenDesign] = useState('')
-  const [isOpenTech, setIsOpenTech] = useState('')
-
-  function openModalTech(event) {
-    setIsOpenTech(event.target)
-  }
-
-  function openModalDesign(event) {
-    setIsOpenDesign(event.target)
-  }
-
-  function openModalDeveloper(event) {
-    setIsOpenDeveloper(event.target)
-  }
-
-  function onRequestClose() {  
-    setIsOpenTech('')
-    setIsOpenDesign('')
-    setIsOpenDeveloper('')
-  }
+  const [openService, setOpenService] = useState<string | null>(null)
 
   return (
     <section id='services' className={styles.services}>
       <span>
-        My Services
+        Serviços
       </span>
-      <h2>What I offer</h2>
+      <h2>Como posso ajudar</h2>
       <div className={styles.grid}>
       <div className={styles.card}>
-          <h3>Web <br /> Developers </h3>
-          <span onClick={openModalTech}>
-            See more <i className='bx bx-right-arrow-alt'></i>
-          </span>
+          <h3>Desenvolvimento <br /> web</h3>
+          <button type="button" onClick={() => setOpenService('web')}>Ver mais <i className='bx bx-right-arrow-alt'></i></button>
 
           <Modal
             titleModal='Web Developers'
             contentModal='Service with more than 3 years of experience Providing quality work to clients and companies'
-            isOpen={isOpenTech}
-            onRequestClose={onRequestClose}
+            isOpen={openService === 'web'}
+            onRequestClose={() => setOpenService(null)}
           />
 
         </div>
 
         <div className={styles.card}>
-          <h3>Web <br /> Designers </h3>
-          <span onClick={openModalDesign}>
-            See more <i className='bx bx-right-arrow-alt'></i>
-          </span>
+          <h3>Design de <br /> interfaces</h3>
+          <button type="button" onClick={() => setOpenService('design')}>Ver mais <i className='bx bx-right-arrow-alt'></i></button>
 
           <Modal
             titleModal='Web Designers'
             contentModal='Service with more than 3 years of experience Providing quality work to clients and companies'
-            isOpen={isOpenDesign}
-            onRequestClose={onRequestClose}
+            isOpen={openService === 'design'}
+            onRequestClose={() => setOpenService(null)}
           />
 
         </div>
        
         <div className={styles.card}>
-          <h3>Ui / Ux <br /> Interface</h3>
-          <span onClick={openModalDeveloper}>
-            See more <i className='bx bx-right-arrow-alt'></i>
-          </span>
+          <h3>UI / UX <br /> estratégico</h3>
+          <button type="button" onClick={() => setOpenService('ux')}>Ver mais <i className='bx bx-right-arrow-alt'></i></button>
 
           <Modal
             titleModal='Ui / Ux Interface'
             contentModal='Beautiful and elegant designs with interfaces that are intuitive, efficient and pleasant to use for the user'
-            isOpen={isOpenDeveloper}
-            onRequestClose={onRequestClose} />
+            isOpen={openService === 'ux'}
+            onRequestClose={() => setOpenService(null)} />
         </div>
          {/*
         <div className={styles.card}>

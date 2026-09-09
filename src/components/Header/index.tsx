@@ -18,22 +18,31 @@ export function Header() {
   };
 
   useEffect(() => {
-    document.body.className = theme;
+    const savedTheme = window.localStorage.getItem('portfolio-theme')
+    if (savedTheme === 'light') {
+      setTheme('light')
+      setIcon('bxs-sun')
+    }
+  }, [])
+
+  useEffect(() => {
+    document.body.className = theme
+    if (theme) window.localStorage.setItem('portfolio-theme', theme)
   }, [theme]);
 
   return (
     <header className={styled.headerContainer} id='header'>
       <nav className={styled.navContainer}>
-        <a href="#" className={styled.logo}> </a>
+        <a href="#home" className={styled.logo} aria-label="Clésio Carvalho - início">CC</a>
         <div className={styled.navMenu}>
           <ul>
             <li>
-              <a href="#home" onClick={() => setConfirme('home')} className={`${confirme === 'home' && styled.active}`}>
+              <a href="#home" aria-label="Início" onClick={() => setConfirme('home')} className={`${confirme === 'home' && styled.active}`}>
                 <i className='bx bxs-home'></i>
               </a>
             </li>
             <li>
-              <a href="#about" onClick={() => setConfirme('about')} className={`${confirme === 'about' && styled.active}`}>
+              <a href="#about" aria-label="Sobre mim" onClick={() => setConfirme('about')} className={`${confirme === 'about' && styled.active}`}>
                 <i className='bx bxs-user'></i>
               </a>
             </li>
@@ -43,18 +52,18 @@ export function Header() {
               </a>
             </li>*/ }
             <li>
-              <a href="#work" onClick={() => setConfirme('work')} className={`${confirme === 'work' && styled.active}`}>
+              <a href="#work" aria-label="Projetos" onClick={() => setConfirme('work')} className={`${confirme === 'work' && styled.active}`}>
                 <i className='bx bxs-briefcase-alt-2'></i>
               </a>
             </li>
             <li>
-              <a href="#contact" onClick={() => setConfirme('contact')} className={`${confirme === 'contact' && styled.active}`}>
+              <a href="#contact" aria-label="Contacto" onClick={() => setConfirme('contact')} className={`${confirme === 'contact' && styled.active}`}>
                 <i className='bx bxs-message-square-detail'></i>
               </a>
             </li>
           </ul>
         </div>
-        <i onClick={toggleTheme} className={`bx ${icon} ${styled.changeTheme}`} id='theme-button'></i>
+        <button onClick={toggleTheme} className={`bx ${icon} ${styled.changeTheme}`} id='theme-button' aria-label="Alternar tema" type="button"></button>
       </nav>
     </header>
   )
