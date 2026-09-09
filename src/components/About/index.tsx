@@ -1,48 +1,70 @@
-import Image from 'next/image'
-import styles from './styles.module.scss'
-const imgAbout = '/images/about.jpeg'
-
+import styles from './styles.module.scss';
 
 export function About() {
   return (
-    <section className={styles.about} id="about">
-      <span>Sobre mim</span>
-      <h2>Desenvolvedor de software freelancer</h2>
+    <section className={styles.container} id="about" aria-labelledby="about-title">
       <div className={styles.grid}>
-        <div className={styles.data}>
-          <div className={styles.info}>
-            <div className={styles.box}>
-              <i className='bx bx-award'></i>
-              <h3>Experience</h3>
-              <span>Experiência profissional</span>
-            </div>
+        <div className={styles.content}>
+          <header className={styles.header}>
+            <p className={styles.eyebrow}>About me</p>
+            <h2 id="about-title" className={styles.title}>
+              Turning complex problems into clean solutions
+            </h2>
+          </header>
 
-            <div className={styles.box}>
-              <i className='bx bx-briefcase-alt'></i>
-              <h3>Completed</h3>
-              <span>12+ projetos</span>
+          <div className={styles.highlights}>
+            <div className={styles.highlight}>
+              <span className={styles.highlightValue}>4+</span>
+              <span className={styles.highlightLabel}>Years shipping code</span>
             </div>
-
-            <div className={styles.box}>
-              <i className='bx bx-support'></i>
-              <h3>Support</h3>
-              <span>Comunicação próxima</span>
+            <div className={styles.highlight}>
+              <span className={styles.highlightValue}>12+</span>
+              <span className={styles.highlightLabel}>Projects delivered</span>
+            </div>
+            <div className={styles.highlight}>
+              <span className={styles.highlightValue}>8</span>
+              <span className={styles.highlightLabel}>Tech stack core</span>
             </div>
           </div>
 
-          <p>
-            Desenvolvo experiências digitais com foco em clareza, performance e resultados.
-            Gosto de transformar necessidades reais em interfaces simples e aplicações
-            confiáveis, trabalhando próximo de cada cliente e equipa.
-            <br></br><br></br>
-            Atualmente trabalho como freelancer e continuo a evoluir através de projetos,
-            eventos e formação contínua em tecnologia.
+          <div className={styles.narrative}>
+            <p>
+              I&apos;m a full-stack developer based in Luanda, Angola, with over four years
+              of experience building web applications for startups and established
+              companies across Europe, Africa, and South America.
+            </p>
+            <p>
+              My focus is on writing maintainable, scalable code &mdash; whether that&apos;s
+              architecting a React/Node.js platform, optimizing database queries in
+              PostgreSQL or MongoDB, or setting up CI/CD pipelines on AWS. I care
+              about developer experience as much as user experience.
+            </p>
+            <p>
+              Currently open to freelance projects and full-time opportunities where
+              I can contribute to meaningful products and grow alongside a strong
+              engineering team.
+            </p>
+          </div>
 
-            
-          </p>
-
-          <a download href='/CurriculumVitaeGeral.pdf' className='button'>Baixar currículo</a>
+          <a
+            href="/CurriculumVitaeGeral.pdf"
+            download
+            className="btn btn-primary"
+          >
+            Download r&eacute;sum&eacute;
+          </a>
         </div>
+
+        <div className={styles.visual} aria-hidden="true">
+          <div className={styles.imageWrapper}>
+            <img
+              src="/images/about.jpeg"
+              alt="Cl&eacute;sio Carvalho working at his desk"
+              className={styles.image}
+            />
+          </div>
+        </div>
+<<<<<<< HEAD
         <Image
           src={imgAbout}
           alt="Clésio Carvalho a trabalhar como developer"
@@ -51,7 +73,9 @@ export function About() {
           layout="responsive"
           className={styles.ImageAbout}
         />
+=======
+>>>>>>> 0d8768d0f8481efeb77175b417fae654995848ab
       </div>
     </section>
-  )
+  );
 }
