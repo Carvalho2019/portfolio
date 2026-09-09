@@ -154,30 +154,6 @@ export function Work() {
             {cat.label}
           </button>
         ))}
-<<<<<<< HEAD
-      </div>
-      <div className={`${styles.grid} itemsGrid`}>
-        {visibleProjects.length === 0 && (
-          <p role="status">Ainda não há projetos publicados nesta categoria.</p>
-        )}
-        {visibleProjects.map(project => (
-          <article className={`${styles.card} itemCard`} key={project.title}>
-            <Image
-              src={project.image}
-              alt={`Pré-visualização do projeto ${project.title}`}
-              width={1184}
-              height={655}
-              layout="responsive"
-              className={styles.cardImg}
-            />
-            <div className={styles.cardData}>
-              <span className={styles.cardDescription}>{project.description}</span>
-              <h3 className={styles.cardTitle}>{project.title}</h3>
-              <small>{project.stack}</small>
-              <a href={project.href} target="_blank" rel="noreferrer" className={styles.cardButton}>
-                Ver projeto <i className="bx bx-right-arrow-alt"></i>
-              </a>
-=======
       </nav>
 
       <div className={styles.grid} role="list">
@@ -226,7 +202,6 @@ export function Work() {
                   </li>
                 ))}
               </ul>
->>>>>>> 0d8768d0f8481efeb77175b417fae654995848ab
             </div>
           </article>
         ))}

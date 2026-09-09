@@ -64,17 +64,6 @@ export function About() {
             />
           </div>
         </div>
-<<<<<<< HEAD
-        <Image
-          src={imgAbout}
-          alt="Clésio Carvalho a trabalhar como developer"
-          width={1024}
-          height={1024}
-          layout="responsive"
-          className={styles.ImageAbout}
-        />
-=======
->>>>>>> 0d8768d0f8481efeb77175b417fae654995848ab
       </div>
     </section>
   );
