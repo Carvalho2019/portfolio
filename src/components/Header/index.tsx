@@ -2,8 +2,8 @@ import styles from './styles.module.scss'
 import { useState, useEffect } from 'react'
 
 const navItems = [
-  { href: '#home', label: 'Home', icon: 'home' },
-  { href: '#about', label: 'About', icon: 'user' },
+  //{ href: '#home', label: 'Home', icon: 'home' },
+  { href: '#about', label: 'Info', icon: 'user' },
   { href: '#skills', label: 'Skills', icon: 'code' },
   { href: '#work', label: 'Work', icon: 'briefcase' },
   { href: '#contact', label: 'Contact', icon: 'mail' },
@@ -121,10 +121,7 @@ export function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`} role="banner">
       <nav className={styles.nav} aria-label="Main navigation">
         <a href="#home" className={styles.logo} aria-label="Clésio Carvalho - Home">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-            <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" strokeWidth="2" />
-            <path d="M8 16L14 22L24 10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+
         </a>
 
         <div className={styles.navDesktop}>

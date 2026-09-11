@@ -250,6 +250,21 @@
   box-shadow: 0 8px 16px var(--color-accent-dim);
 }
 
+.social a:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  transition: all var(--transition-base);
+  padding-inline: 1rem;
+  width: auto !important;
+  font-weight: 900px;
+  font-size: 0.9rem;
+}
+
 /* == Scroll Indicator ==*/
 .scrollIndicator {
   position: absolute;

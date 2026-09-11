@@ -10,6 +10,7 @@
   --color-highlight: #FFB800;
   --color-highlight-dim: #FFB80033;
   --color-text: #E8EDF2;
+  --color-text-muted-slim: #EEE;
   --color-text-muted: #6B7C8D;
   --color-text-dim: #4A5A6A;
 
@@ -93,7 +94,7 @@
 
 /* Light theme (opt-in via .light on html) */
 .light {
-  --color-bg: #F8FAFC;
+  --color-bg: #E1EAEC;
   --color-bg-elevated: #FFFFFF;
   --color-border: #E2E8F0;
   --color-accent: #0066CC;
