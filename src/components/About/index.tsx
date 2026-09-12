@@ -10,7 +10,7 @@ export function About() {
       <div className={styles.grid}>
         <div className={styles.content}>
           <header className={styles.header}>
-            <p className={styles.eyebrow}>What I'm Building Toward</p>
+            <p className={styles.eyebrow}>What I&apos;m Building Toward</p>
             <h2 id="about-title" className={styles.title}>
               Turning complex problems into clean solutions
             </h2>

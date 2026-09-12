@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-
+import Image from "next/image";
 export function Hero() {
   return (
     <section
@@ -15,14 +15,14 @@ export function Hero() {
             <span className={styles.name}>Cl&eacute;sio Carvalho</span>
           </h1>
           <p className={styles.subtitle}>
-            I'm a co-founder of <b>okaíke</b> — we build logistics tech that connects couriers, carriers, and warehouses across Angola.
+            I&apos;m a co-founder of <b>okaíke</b> — we build logistics tech that connects couriers, carriers, and warehouses across Angola.
           </p>
 
         </div>
 
         <div className={styles.visual} aria-hidden="true">
           <div className={styles.imageWrapper}>
-            <img
+            <Image
               src="/images/perfil_portfolio.png"
               alt="Cl&eacute;sio Carvalho, Full-stack Developer"
               className={styles.image}

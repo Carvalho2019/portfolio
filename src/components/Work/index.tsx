@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './styles.module.scss';
 import { useState, useMemo } from 'react';
 
@@ -160,7 +161,7 @@ export function Work() {
         {filteredProjects.map((project, index) => (
           <article key={project.id} className={styles.card} role="listitem" style={{ '--index': `${index}` } as React.CSSProperties}>
             <div className={styles.cardImageWrapper}>
-              <img
+              <Image
                 src={project.image}
                 alt={`Screenshot of ${project.title}`}
                 className={styles.cardImage}
