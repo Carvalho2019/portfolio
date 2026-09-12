@@ -162,9 +162,11 @@ export function Work() {
           <article key={project.id} className={styles.card} role="listitem" style={{ '--index': `${index}` } as React.CSSProperties}>
             <div className={styles.cardImageWrapper}>
               <Image
+                fill
                 src={project.image}
                 alt={`Screenshot of ${project.title}`}
                 className={styles.cardImage}
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className={styles.cardOverlay}>
                 <a
