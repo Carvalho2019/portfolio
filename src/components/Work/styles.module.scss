@@ -105,35 +105,29 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, border-color var(--transition-base), box-shadow var(--transition-base);
+  transition-delay: calc(var(--index, 0) * 80ms);
+}
+
+.inView .card {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .card:hover {
   border-color: var(--color-accent);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
   transform: translateY(-4px);
-}
-
-/* Staggered entrance */
-.card {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease-out forwards;
-  animation-delay: calc(var(--index, 0) * 100ms);
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  transition-delay: 0ms;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .card {
-    animation: none;
     opacity: 1;
     transform: none;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
   }
 }
 

@@ -160,24 +160,11 @@
   height: 100%;
   background: linear-gradient(90deg, var(--color-accent), var(--color-highlight));
   border-radius: var(--radius-full);
-  transition: width 1s ease-out;
-  width: 0;
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Trigger animation on load */
-.category:has(.skillProgress) .skillProgress {
-  animation: fillBar 1s ease-out forwards;
-}
-
-@keyframes fillBar {
-  from { width: 0; }
-  to { width: var(--progress-width, 100%); }
-}
-
-/* Fallback - animate on view */
 @media (prefers-reduced-motion: reduce) {
   .skillProgress {
-    animation: none;
     transition: none;
   }
 }

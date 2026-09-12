@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
 const skillCategories = [
@@ -40,8 +41,27 @@ const skillCategories = [
 ];
 
 export function Skills() {
+  const [barsInView, setBarsInView] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setBarsInView(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className={styles.container} id="skills" aria-labelledby="skills-title">
+    <section ref={sectionRef} className={styles.container} id="skills" aria-labelledby="skills-title">
       <header className={styles.header}>
         <p className={styles.eyebrow}>Technical skills</p>
         <h2 id="skills-title" className={styles.title}>
@@ -91,7 +111,7 @@ export function Skills() {
                   <div className={styles.skillBar} role="progressbar" aria-valuenow={skill.level} aria-valuemin={0} aria-valuemax={100} aria-label={`${skill.name} proficiency`}>
                     <div
                       className={styles.skillProgress}
-                      style={{ width: `${skill.level}%` }}
+                      style={{ width: barsInView ? `${skill.level}%` : '0%' }}
                     />
                   </div>
                 </li>

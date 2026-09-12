@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import styles from './styles.module.scss';
 
 const services = [
@@ -84,6 +85,25 @@ const icons = {
 };
 
 export function Services() {
+  const [cardsInView, setCardsInView] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCardsInView(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className={styles.container} id="services" aria-labelledby="services-title">
       <header className={styles.header}>
@@ -96,9 +116,9 @@ export function Services() {
         </p>
       </header>
 
-      <div className={styles.grid}>
-        {services.map((service) => (
-          <article key={service.title} className={styles.card}>
+      <div ref={gridRef} className={`${styles.grid} ${cardsInView ? styles.inView : ''}`}>
+        {services.map((service, i) => (
+          <article key={service.title} className={styles.card} style={{ '--delay': `${i * 100}ms` } as React.CSSProperties}>
             <div className={styles.cardIcon}>
               {icons[service.icon as keyof typeof icons]}
             </div>
