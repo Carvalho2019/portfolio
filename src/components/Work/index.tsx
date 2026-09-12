@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import styles from './styles.module.scss';
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 
 interface Project {
   id: string;
@@ -125,6 +125,24 @@ const categories = [
 
 export function Work() {
   const [activeFilter, setActiveFilter] = useState<'all' | 'web' | 'mobile' | 'design'>('all');
+  const [cardsInView, setCardsInView] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = gridRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setCardsInView(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === 'all') return projects;
@@ -157,14 +175,16 @@ export function Work() {
         ))}
       </nav>
 
-      <div className={styles.grid} role="list">
+      <div ref={gridRef} className={`${styles.grid} ${cardsInView ? styles.inView : ''}`} role="list">
         {filteredProjects.map((project, index) => (
           <article key={project.id} className={styles.card} role="listitem" style={{ '--index': `${index}` } as React.CSSProperties}>
             <div className={styles.cardImageWrapper}>
               <Image
+                fill
                 src={project.image}
                 alt={`Screenshot of ${project.title}`}
                 className={styles.cardImage}
+                sizes="(max-width: 768px) 100vw, 33vw"
               />
               <div className={styles.cardOverlay}>
                 <a

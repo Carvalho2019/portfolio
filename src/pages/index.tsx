@@ -7,6 +7,7 @@ import styles from './home.module.scss'
 import { Work } from "../components/Work";
 import { Contact } from "../components/Contact";
 import { Footer } from "../components/Footer";
+import { Reveal } from "../components/Reveal";
 
 export default function Home() {
   return (
@@ -48,11 +49,11 @@ export default function Home() {
       </Head>
       <main className={styles.container}>
         <Hero />
-        <About />
-        <Skills />
-        <Services />
-        <Work />
-        <Contact />
+        <Reveal><About /></Reveal>
+        <Reveal><Skills /></Reveal>
+        <Reveal><Services /></Reveal>
+        <Reveal><Work /></Reveal>
+        <Reveal><Contact /></Reveal>
         <Footer />
       </main>
 

@@ -23,9 +23,11 @@ export function Hero() {
         <div className={styles.visual} aria-hidden="true">
           <div className={styles.imageWrapper}>
             <Image
+              fill
               src="/images/perfil_portfolio.png"
               alt="Cl&eacute;sio Carvalho, Full-stack Developer"
               className={styles.image}
+              sizes="280px"
             />
             <div className={styles.glow} />
           </div>
